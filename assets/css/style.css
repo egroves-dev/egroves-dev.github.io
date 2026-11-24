@@ -126,6 +126,56 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 
+/* ---------- Home ---------- */
+.cmd { color: var(--muted); margin: 0 0 0.5rem; }
+.ps1 { color: var(--accent); margin-right: 0.5ch; }
+
+.hero h1 { font-size: 2.6rem; margin-bottom: 0.25rem; }
+.tagline { color: var(--muted); margin-top: 0; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+.dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+.btn:hover { text-decoration: none; filter: brightness(1.1); }
+.btn-ghost { background: transparent; color: var(--accent); }
+
+.project-list { list-style: none; padding: 0; }
+.project-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-list span { color: var(--muted); }
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2rem; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   padding: var(--space);
@@ -157,4 +207,95 @@ h2 {
   html { scroll-behavior: auto; }
   .prompt::after { animation: none; }
   nav a { transition: none; }
+}
+
+/* ---------- Log entries (Experience, Education) ---------- */
+.log-entry {
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border);
+}
+.log-entry:hover { border-left-color: var(--accent); }
+
+.log-head h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.org { color: var(--accent); font-weight: 400; }
+
+.log-meta {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* Bullets drawn as terminal arrows */
+.log-entry ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0;
+}
+.log-entry li {
+  position: relative;
+  padding-left: 1.5ch;
+  margin-bottom: 0.5rem;
+}
+.log-entry li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.stack {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Compact one-line entries */
+.log-compact { list-style: none; padding: 0; }
+.log-compact li { padding: 0.4rem 0; }
+.log-compact .log-meta {
+  display: inline-block;
+  min-width: 13ch;
+  margin: 0;
+}
+
+/* Key/value pairs (Education) */
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1.5rem;
+  margin: 1rem 0 0;
+}
+.kv dt { color: var(--muted); }
+.kv dt::after { content: ":"; }
+.kv dd { margin: 0; }
+
+/* Coursework */
+.course-list { list-style: none; padding: 0; }
+.course-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.course-list span { color: var(--muted); font-size: 0.9rem; }
+
+/* Footer links */
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .log-compact .log-meta { display: block; }
 }
