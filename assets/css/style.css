@@ -1,0 +1,21 @@
+:root {
+  --bg:     #070A12;
+  --text:   #E6EDF7;
+  --accent: #FF7A3D;
+  --muted:  #8A97AD;
+  --border: #1C2333;
+  --font:   "JetBrains Mono", ui-monospace, monospace;
+  --max-width: 900px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
